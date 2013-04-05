@@ -61,9 +61,8 @@
 
 // Content wrapper
 #main-content {
-  width: 880px;
+  width: 960px;
   margin: 40px 0;
-  padding: 40px;
   background: #EEE;
 }
 
@@ -74,8 +73,21 @@
   text-align: center;
 }
 
+#header {
+  width: 960px;
+  height: 75px;
+  margin: 0 auto;
+  background-color: #ccc;
+}
+
+#logo {
+  width: 150px;
+  height: 75px;
+  background-color: #cdf;
+}
+
 // Columnizer rows & columns
-.columnizer-row { margin: 40px 0; }
+.columnizer-row { margin: 30px 40px; }
 
 // Assets
 .asset { background-color: #ccc; }
@@ -130,19 +142,6 @@
 * html .clearfix             { zoom: 1; } /* IE6 */
 *:first-child+html .clearfix { zoom: 1; } /* IE7 */
 
-#header {
-  width: 960px;
-  height: 75px;
-  margin: 0 auto;
-  background-color: #ccc;
-}
-
-#logo {
-  width: 150px;
-  height: 75px;
-  background-color: #cdf;
-}
-
 /* POPULR IMAGE SLIDER */
 #populr > #image-slider-themes > .basic();
 
@@ -152,19 +151,16 @@
 
   .columnizer-row {
     width: auto !important;
-    padding-left: 30px !important;
-    padding-right: 30px !important;
   }
 
   #header {
-    width: 100%;
-    padding: 0 30px;
+    width: auto !important;
+    padding: 0 40px !important;
   }
 }
 
 @media screen and (max-width: 600px) {
   #logo { margin: 0 auto !important; }
 }
-
 
 
