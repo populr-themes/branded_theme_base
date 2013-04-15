@@ -8,20 +8,27 @@
 // pop. Populr automatically calculates the average color of any 
 // background image selected by the user, and stores that average 
 // color in @background-color.
-@background-color: #ccc;
+@background-color: #fff;
+
+/* BRANDED THEME VARIABLES */
+@brand-logo-path: "@{base-url}/images/logo.png";
+@brand-logo-width: 200px;
+@brand-logo-height: 75px;
+
+@brand-title-font: Arial, serif;
+@brand-body-font: Arial, serif;
+
+@brand-accent-color: #33f;
 
 // The following variables can be edited by Populr's users
 // via dropdown menus in the pop editor.
 
 // @headline-font-family is changed with the Font dropdown 
-@headline-font-family: Arial, serif;
+@headline-font-family: @brand-title-font;
 
 // @accent-color is changed with the color picker in the Style 
 // dropdown. The color picker will only be available to your 
 // users if you set it up as one of your color palettes. See the 
 // Populr themer documentation for details on how this works:
 // http://developers.populr.me/theming/
-@accent-color: #33f;
-
-
-/* BRANDED THEME VARIABLES */
+@accent-color: @brand-accent-color;

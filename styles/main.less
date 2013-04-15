@@ -24,7 +24,7 @@
 .asset-title { .headline-font(); }
 
 // Body text defaults
-@body-font-family: Arial, sans-serif;
+@body-font-family: @brand-body-font;
 @body-font-size: 14px;
 @body-line-height: 1.5;
 @body-font-weight: 400;
@@ -63,7 +63,6 @@
 #main-content {
   width: 960px;
   margin: 40px 0;
-  background: #EEE;
 }
 
 // Pop title
@@ -71,26 +70,26 @@
   .headline-font();
   font-size: 60px;
   text-align: center;
+  margin-top: 10px;
 }
 
 #header {
   width: 960px;
   height: 75px;
   margin: 0 auto;
-  background-color: #ccc;
 }
 
 #logo {
-  width: 150px;
-  height: 75px;
-  background-color: #cdf;
+  width: @brand-logo-width;
+  height: @brand-logo-height;
+  background: url("@{brand-logo-path}") no-repeat 0 0;
 }
 
 // Columnizer rows & columns
 .columnizer-row { margin: 30px 0; }
 
 // Assets
-.asset { background-color: #ccc; }
+// .asset { background-color: #ccc; }
 
 .asset-inner { .clearfix; }
 
