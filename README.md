@@ -1,4 +1,4 @@
-custom_theme
+branded_theme
 ============
 
-Starting point for custom themes
+Starting point for branded themes
