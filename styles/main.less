@@ -6,7 +6,9 @@
 /* TYPOGRAPHY DEFAULTS */
 
 @text-color: #111;
-@link-color: @accent-color;
+@link-color: darken(@accent-color, 10%);
+@link-color-hover: @accent-color;
+@link-color-active: lighten(@accent-color, 20%);
 
 // Title text defaults
 // @headline-font-family is defined in variables.less
@@ -36,7 +38,6 @@
   font-weight: @body-font-weight;
 }
 
-// .description, .description p, .description li, .content, .content p, .content li, .body, .body p, .body li {
 .description, .content, .body, p, li {
   .body-font();
 }
@@ -47,7 +48,6 @@
 /* STRUCTURE */
 
 #pop {
-  width: 960px;
   margin: 0 auto;
   color: @text-color;
   i, em { font-style: italic; }
@@ -55,15 +55,18 @@
   a {
     color: @link-color;
     text-decoration: none;
-    &:hover { text-decoration: underline; }
+    &:hover {
+      color: @link-color-hover;
+      text-decoration: underline;
+    }
+    &:active {
+      color: @link-color-active;
+    }
   }
 }
 
 // Content wrapper
-#main-content {
-  width: 960px;
-  margin: 40px 0;
-}
+#main-content { margin: 40px auto; }
 
 // Pop title
 #pop-title {
@@ -86,19 +89,17 @@
 }
 
 // Columnizer rows & columns
-.columnizer-row { margin: 30px 0; }
+.columnizer-row {
+  width: 960px;
+  margin: 30px auto;
+}
 
 // Assets
-// .asset { background-color: #ccc; }
-
 .asset-inner { .clearfix; }
 
 .asset-title {
   margin: 10px 0;
   padding: 0 10px;
-}
-.asset-type-text .asset-title, .asset-type-documentgroup .asset-title {
-  padding-top: 10px;
 }
 
 .description, .body {
@@ -108,6 +109,11 @@
   margin: 10px 0;
   padding: 0 10px;
 }
+
+.content { margin: 10px 0; }
+
+// Populr image slider
+#populr > #image-slider-themes > .basic();
 
 // Video assets
 .asset-type-videogroup .video-js { margin-bottom: 15px; }
@@ -141,8 +147,10 @@
 * html .clearfix             { zoom: 1; } /* IE6 */
 *:first-child+html .clearfix { zoom: 1; } /* IE7 */
 
-/* POPULR IMAGE SLIDER */
-#populr > #image-slider-themes > .basic();
+#footer {
+  height: 100px;
+  #gradient > .vertical(@accent-color, darken(@accent-color, 30%));
+}
 
 /* MOBILE */
 @media screen and (max-width: 960px) {
@@ -150,11 +158,12 @@
 
   .columnizer-row {
     width: auto !important;
+    padding: 0 20px !important;
   }
 
   #header {
     width: auto !important;
-    padding: 0 40px !important;
+    padding: 0 20px !important;
   }
 }
 
