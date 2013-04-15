@@ -95,7 +95,7 @@
 }
 
 // Assets
-.asset-inner { .clearfix; }
+// .asset-inner { .clearfix; }
 
 .asset-title {
   margin: 10px 0;
@@ -103,11 +103,11 @@
 }
 
 .description, .body {
+  margin: 10px 0;
+  padding: 0 10px;
   ul, ol { margin: .5em 0 .5em 2em; }
   ul li { list-style-type: disc; }
   ol li { list-style-type: decimal; }
-  margin: 10px 0;
-  padding: 0 10px;
 }
 
 .content { margin: 10px 0; }
@@ -133,7 +133,10 @@
 .asset-type-videogroup video { display: block; }
 .asset-type-videogroup .mejs-container video { margin-left: 0; }
 
-.documents { margin: 10px; }
+.documents {
+  margin: 10px;
+  li { margin-bottom: .5em; }
+}
 
 // Clearfix
 .clearfix:after {
