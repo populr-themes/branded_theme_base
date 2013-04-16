@@ -14,13 +14,11 @@
 // @headline-font-family is defined in variables.less
 @headline-font-size: 24px;
 @headline-line-height: 1.2;
-@headline-font-weight: 400;
 
 .headline-font() {
   font-family: @headline-font-family;
   font-size: @headline-font-size;
   line-height: @headline-line-height;
-  font-weight: @headline-font-weight;
 }
 
 .asset-title { .headline-font(); }
@@ -55,13 +53,8 @@
   a {
     color: @link-color;
     text-decoration: none;
-    &:hover {
-      color: @link-color-hover;
-      text-decoration: underline;
-    }
-    &:active {
-      color: @link-color-active;
-    }
+    &:hover { text-decoration: underline; }
+    &:active { color: @link-color-active; }
   }
 }
 
@@ -70,15 +63,16 @@
 
 // Pop title
 #pop-title {
+  width: 960px;
+  margin: 30px auto 0;
   .headline-font();
-  font-size: 60px;
+  font-size: 54px;
+  line-height: 1.1;
   text-align: center;
-  margin-top: 10px;
 }
 
 #header {
   width: 960px;
-  height: 75px;
   margin: 0 auto;
 }
 
@@ -94,14 +88,10 @@
   margin: 30px auto;
 }
 
-.asset-title {
-  margin: 10px 0;
-  padding: 0 10px;
-}
+.asset-title { margin: 10px 0; }
 
 .description, .body {
   margin: 10px 0;
-  padding: 0 10px;
   ul, ol { margin: .5em 0 .5em 2em; }
   ul li { list-style-type: disc; }
   ol li { list-style-type: decimal; }
@@ -131,7 +121,7 @@
 .asset-type-videogroup .mejs-container video { margin-left: 0; }
 
 .documents {
-  margin: 10px;
+  margin: 10px auto;
   li { margin-bottom: .5em; }
 }
 
@@ -148,16 +138,27 @@
 *:first-child+html .clearfix { zoom: 1; } /* IE7 */
 
 #footer {
-  height: 200px;
+  height: 100px;
   #gradient > .vertical(@accent-color, darken(@accent-color, 30%));
+  color: #eee;
+  text-align: center;
+  .body-font();
+  margin-top: 60px;
+  padding-top: 10px;
 }
 
 /* MOBILE */
 @media screen and (max-width: 960px) {
   #populr > .mobile-reset();
 
+  #pop-title {
+    width: auto !important;
+    padding: 0 20px !important;
+  }
+
   .columnizer-row {
     width: auto !important;
+    margin: 20px auto !important;
     padding: 0 20px !important;
   }
 
@@ -168,7 +169,16 @@
 }
 
 @media screen and (max-width: 600px) {
-  #logo { margin: 0 auto !important; }
+  #pop-title { font-size: 32px !important; }
+
+  .asset-title { font-size: 18px !important; }
+
+  #logo {
+    margin: 0 auto !important;
+    width: auto !important;
+    max-width: @brand-logo-width !important;
+    background-size: contain !important;
+  }
 }
 
 
