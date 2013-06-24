@@ -60,7 +60,17 @@
 // Content wrapper
 #main-content { margin: 20px auto; }
 
-// Link icons
+#header {
+  width: 960px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#pop-logo {
+  text-align: left;
+  img { height: 70px; }
+}
+
 #pop-links {
   display: inline-block;
   position: absolute;
@@ -68,20 +78,13 @@
   bottom: -10px;
 }
 
-// Pop title
 #pop-title {
   width: 960px;
-  margin: 40px auto;
+  margin: 30px auto;
   .headline-font();
   font-size: 54px;
   line-height: 1.1;
   text-align: center;
-}
-
-#header {
-  width: 960px;
-  margin: 0 auto;
-  position: relative;
 }
 
 // Columnizer rows & columns
@@ -201,7 +204,9 @@
 }
 
 @media screen and (max-width: 600px) {
-  #pop-title { font-size: 32px !important; }
+  #pop-logo {
+    text-align: center !important;
+  }
 
   #pop-links {
     display: block !important;
@@ -210,14 +215,9 @@
     right: 0 !important;
   }
 
-  .asset-title { font-size: 20px !important; }
+  #pop-title { font-size: 32px !important; }
 
-  #logo {
-    margin: 0 auto !important;
-    width: auto !important;
-    max-width: @brand-logo-width !important;
-    background-size: contain !important;
-  }
+  .asset-title { font-size: 20px !important; }
 }
 
 
