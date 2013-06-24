@@ -19,11 +19,10 @@
 @brand-logo-height: 75px;
 
 // Font
-@brand-title-font: Georgia, sans-serif;
-@brand-body-font: Arial, serif;
+@brand-title-font: Georgia, serif;
+@brand-body-font: Arial, sans-serif;
 
 // Colors
-
 /*
 Add brand colors here as @[acronym][color name]
 */
@@ -32,7 +31,8 @@ Add brand colors here as @[acronym][color name]
 @brand-text-color: #555;
 @brand-title-color: #111;
 @brand-link-color: #f00;
-@brand-gradient-color: #555;
+@brand-gradient-color-light: #555;
+@brand-gradient-color-dark: darken(@brand-gradient-color-light, 10%);
 
 /* END BRANDED THEME VARIABLES */
 
@@ -49,4 +49,4 @@ Add brand colors here as @[acronym][color name]
 // users if you set it up as one of your color palettes. See the 
 // Populr themer documentation for details on how this works:
 // http://developers.populr.me/theming/
-@accent-color: #f00;
+@custom-color: #f00;
