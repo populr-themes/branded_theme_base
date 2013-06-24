@@ -1,15 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html itemscope>
 <head>
   <meta charset="utf-8">
 
   <!-- Name of yur theme -->
   <title>Branded Theme Skeleton</title>
 
-<!--
-  <palette class="palette-default" name="Default" preview="#ffffff,#222222">
--->
+  <!--
+    Dummy content parameters
+  -->
+  <!-- dummyImageCategory: specify search term for images to pull from 500px -->
+  <meta itemprop="dummyImageCategory" content="All">
+  <!-- dummyContentLength: specify how much dummy text appears within each asset -->
+  <!-- Value can be set to short, medium or long -->
+  <meta itemprop="dummyContentLength" content="medium">
 
+  <!--
+    Theme styles
+    The Custom style presents Populr's end users with a color picker that sets the @custom-color variable
+  -->
+  <!-- <meta itemprop="palette" content="palette-default" title="Default" data-preview="#fff,#000"> -->
+  <!-- <meta itemprop="palette" content="palette-custom" data-preview="custom"> -->
+ 
   <!-- Add any styles your theme requires here -->
   <link rel="stylesheet/less" type="text/css" href="/styles/main.less">
 
@@ -73,30 +85,6 @@
         {{{description}}}
       {{/asset}}
   
-      {{#asset "videogroup" size="1"}}
-        {{{title}}}
-        <div class="content">
-          {{{videoplayer videos width="960" height="720" resolution="large"}}}
-        </div>
-        {{{description}}}
-      {{/asset}}
-
-      {{#asset "videogroup" size="2"}}
-        {{{title}}}
-        <div class="content">
-          {{{videoplayer videos width="470" height="353" resolution="medium"}}}
-        </div>
-        {{{description}}}
-      {{/asset}}
-
-      {{#asset "videogroup" size="3"}}
-        {{{title}}}
-        <div class="content">
-          {{{videoplayer videos width="307" height="230" resolution="small"}}}
-        </div>
-        {{{description}}}
-      {{/asset}}
-
       {{#asset "documentgroup" size="1"}}
         {{{title}}}
         {{{description}}}
