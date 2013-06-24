@@ -35,8 +35,9 @@
   line-height: @body-line-height;
 }
 
-.description, .content, .body, p, li {
+.description, .content, .body {
   .body-font();
+  p, li { .body-font(); }
 }
 
 /* END TYPOGRAPHY */
@@ -58,7 +59,7 @@
 }
 
 // Content wrapper
-#main-content { margin: 20px auto; }
+#main-content { margin: 20px auto 0; }
 
 #header {
   width: 960px;
@@ -68,6 +69,7 @@
 
 #pop-logo {
   text-align: left;
+  line-height: 0;
   img { height: 70px; }
 }
 
@@ -75,7 +77,7 @@
   display: inline-block;
   position: absolute;
   right: -10px;
-  bottom: -10px;
+  top: -10px;
 }
 
 #pop-title {
@@ -85,6 +87,12 @@
   font-size: 54px;
   line-height: 1.1;
   text-align: center;
+}
+
+#main-content {
+  width: @main-content-width;
+  padding: @main-content-padding;
+  background-color: @main-content-background;
 }
 
 // Columnizer rows & columns
@@ -159,20 +167,27 @@
 
 #footer {
   #gradient > .vertical(@brand-gradient-color-light, @brand-gradient-color-dark);
-  color: #eee;
-  text-align: center;
-  .body-font();
-  font-size: 13px;
-  margin-top: 60px;
+  margin: 60px @footer-margin-sides @footer-margin-bottom;
   padding-top: 10px;
   padding-bottom: 60px;
+  text-align: center;
+  .body-font();
+  color: #fff;
+  font-size: 13px;
   letter-spacing: 1px;
-  a { color: #fff; }
+  a, a:hover, a:active, a:visited { color: #fff; }
 }
 
 /* MOBILE */
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1000px) {
   #populr > .mobile-reset();
+
+  #main-content { max-width: @main-content-width-tablet !important; }
+
+  #header {
+    width: 600px !important;
+    padding: 0 20px !important;
+  }
 
   #pop-title {
     width: auto !important;
@@ -181,8 +196,11 @@
 
   #pop-links { right: 10px !important; }
 
+  #pop-title { font-size: 32px !important; }
+
   .columnizer-row {
     width: auto !important;
+    max-width: 600px !important;
     margin: 20px auto !important;
     padding: 0 20px !important;
   }
@@ -192,20 +210,28 @@
     text-align: left !important;
   }
 
-  .description, .body, p, li {
+  .description, .body {
     font-size: 14px !important;
     text-align: left !important;
-  }
-
-  #header {
-    width: auto !important;
-    padding: 0 20px !important;
+    p, li {
+      font-size: 14px !important;
+      text-align: left !important;      
+    }
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
+  #main-content { margin-top: 0 !important; }
+
+  #header {
+    width: auto !important;
+    max-width: 600px !important;
+    padding: 0 20px !important;
+  }
+
   #pop-logo {
     text-align: center !important;
+    padding-top: @logo-padding-mobile !important;
   }
 
   #pop-links {
@@ -213,9 +239,13 @@
     position: relative !important;
     margin: 0 auto !important;
     right: 0 !important;
+    top: 10px !important;
   }
 
-  #pop-title { font-size: 32px !important; }
+  .columnizer-row {
+    padding-right: @row-padding-mobile !important;
+    padding-left: @row-padding-mobile !important;
+  }
 
   .asset-title { font-size: 20px !important; }
 }

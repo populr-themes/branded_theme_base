@@ -19,8 +19,8 @@
     Theme styles
     The Custom style presents Populr's end users with a color picker that sets the @custom-color variable
   -->
-  <!-- <meta itemprop="palette" content="palette-default" title="Default" data-preview="#fff,#000"> -->
-  <!-- <meta itemprop="palette" content="palette-custom" data-preview="custom"> -->
+  <meta itemprop="palette" content="palette-default" title="Default" data-preview="#fff,#000">
+  <meta itemprop="palette" content="palette-transparent" title="Transparent" data-preview="#fff">
  
   <!-- Add any styles your theme requires here -->
   <link rel="stylesheet/less" type="text/css" href="/styles/main.less">
@@ -64,7 +64,7 @@
       {{#asset "imagegroup" size="1"}}
         {{{title}}}
         <div class="content">
-          {{{imageslider images width="960" height="720"}}}
+          {{{imageslider images width="960" height="540" crop-single=true}}}
         </div>
         {{{description}}}
       {{/asset}}
@@ -148,9 +148,9 @@
     {{/region}}
 
     <div id="footer">
-      {{sharing}}
+      {{sharing}}<br>
       Copyright © Company Name<br>
-      <a href="http://magbookkeeping.com/">www.CompanyName.com</a>
+      <a href="http://google.com/">www.CompanyName.com</a>
     </div>
 
   </script>
