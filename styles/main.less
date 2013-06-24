@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'http://populr.me/assets/developers/populr_mixins';
 @import 'preboot';
 
 #reset > .global-reset();
@@ -32,7 +33,6 @@
   font-family: @body-font-family;
   font-size: @body-font-size;
   line-height: @body-line-height;
-  font-weight: @body-font-weight;
 }
 
 .description, .content, .body, p, li {
@@ -58,7 +58,7 @@
 }
 
 // Content wrapper
-#main-content { margin: 40px auto; }
+#main-content { margin: 20px auto; }
 
 // Link icons
 #pop-links {
@@ -81,6 +81,7 @@
 #header {
   width: 960px;
   margin: 0 auto;
+  position: relative;
 }
 
 #logo {
@@ -160,10 +161,11 @@
 *:first-child+html .clearfix { zoom: 1; } /* IE7 */
 
 #footer {
-  #gradient > .vertical(@brand-gradient-color, darken(@brand-gradient-color, 30%));
+  #gradient > .vertical(@brand-gradient-color-light, @brand-gradient-color-dark);
   color: #eee;
   text-align: center;
   .body-font();
+  font-size: 13px;
   margin-top: 60px;
   padding-top: 10px;
   padding-bottom: 60px;
